@@ -1327,8 +1327,7 @@ def abc():
 ####################################################################################################
 def pichunter_list(html, relative=False):
     palist = []
-#    for node in html.xpath('%s//a[@class="thumb"]' %('.' if relative else '')):
-     for node in html.xpath('//div/a[contains(@href, "tags")]' %('.' if relative else '')):
+    for node in html.xpath('%s//a[@class="thumb "]' %('.' if relative else '')):
         href = node.get('href')
         title = node.xpath('./img/@alt')[0]
         thumb = node.xpath('./img/@src')[0]
