@@ -1074,7 +1074,7 @@ def DirectoryList(title, href, page):
 
     oc = ObjectContainer(title2=main_title, art=R(ART_CH))
 
-    for node in html.xpath('//li[@itemtype]'):
+    for node in html.xpath('//li[@mid]'):
         anode = node.xpath('./a[@class="t"]')[0]
         href = anode.get('href')
         vhref = CH_BASE_URL + href
