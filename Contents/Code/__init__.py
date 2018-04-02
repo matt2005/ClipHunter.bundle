@@ -30,7 +30,7 @@ bm_ch = bookmarks.Bookmark(CH_TITLE, CH_PREFIX, ICON_BM_ADD_CH, ICON_BM_REMOVE_C
 # PicHunter
 PH_TITLE = L('ph_title')
 PH_PREFIX = '/photos/pichunter'
-PH_BASE_URL = 'http://www.pichunter.com'
+PH_BASE_URL = 'https://www.pichunter.com'
 ICON_PH = 'icon-default-ph.png'
 ICON_BM_PH = 'icon-bookmarks-ph.png'
 ICON_BM_ADD_PH = 'icon-add-bookmark-ph.png'
