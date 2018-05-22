@@ -71,7 +71,9 @@ def MediaObjectsForURL(url):
 
             for format_id, f in data.items():
                 video_url = f.get('url')
+                Log.Debug('video_url = %s' %video_url)
                 if not video_url:
+                    Log.Debug('video url not found')
                     continue
 
                 height = f.get('h')
