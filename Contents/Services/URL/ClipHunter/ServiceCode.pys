@@ -67,6 +67,7 @@ def MediaObjectsForURL(url):
         node_text = node.text_content()
         if 'mediaId' in node_text:
             data = JSON.ObjectFromString(Regex('var\ gexoFiles\ =\ ({.+?});').search(node_text).group(1))
+            Log.Debug('* json data = %s' %data)
 
             for format_id, f in data.items():
                 video_url = f.get('url')
