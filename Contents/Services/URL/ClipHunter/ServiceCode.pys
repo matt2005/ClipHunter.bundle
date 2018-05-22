@@ -76,7 +76,8 @@ def MediaObjectsForURL(url):
                     continue
                 if video_url:
                     Log.Debug('video_url = %s' %video_url)
-                    Log.Debug('decoded video_url = %s' decode_video_url(String.Decode(video_url)))
+                    decodedurl = decode_video_url(String.Decode(video_url))
+                    Log.Debug('decoded video_url = %s' %decodedurl)
 
                 height = f.get('h')
                 fmt = f.get('fmt')
