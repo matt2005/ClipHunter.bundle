@@ -33,6 +33,8 @@ def MetadataObjectForURL(url):
 
     if dur:
         duration = (int(dur) * 60)
+        Log.Debug('* dur = %s' %dur)
+        Log.Debug('* duration = %s' %duration)
     else:
         duration = 1000
 
