@@ -24,17 +24,15 @@ def MetadataObjectForURL(url):
     title = html.xpath('//meta[@name="twitter:description"]')[0].get('content').strip()
     for node in html.xpath('//script'):
         node_text = node.text_content()
-        Log.Debug('* node_text = %s' %node_text)
         if 'mediaTitle' in node_text:
             title = Regex('var\ mediaTitle\ =\ (.+?);').search(node_text).group(1).lstrip('\'\"').rstrip('\'\"')
-            dur_node = html.xpath('//div[@class="tr"]')[0].get('content').strip()
-            Log.Debug('* dur_node = %s' %dur_node)
+            dur = Regex('var\ pl_dur\ =\ (\d+?);').search(node_text).group(1).strip()
             break
 
     summary = html.xpath('//meta[@name="description"]')[0].get('content').split(' - porn videos at')[0].strip()
 
-    if dur_node:
-        duration = (int(dur_node.split(':')[0]) * 60000) + (int(dur_node.split(':')[1]) * 1000)
+    if dur:
+        duration = (int(dur) * 60000)
     else:
         duration = 1000
 
