@@ -29,7 +29,7 @@ def MetadataObjectForURL(url):
             break
 
     summary = html.xpath('//meta[@name="description"]')[0].get('content').split(' - porn videos at')[0].strip()
-    dur_node = html.xpath('.//div[@class="tr"]')[0].split(':')
+    dur_node = html.xpath('.//div[@class="tr"]')[0].get('content').split(':')
 
     if dur_node:
         duration = (int(dur_node[0]) * 60000) + (int(dur_node[1]) * 1000)
