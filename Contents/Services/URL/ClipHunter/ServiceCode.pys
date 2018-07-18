@@ -32,9 +32,7 @@ def MetadataObjectForURL(url):
     summary = html.xpath('//meta[@name="description"]')[0].get('content').split(' - porn videos at')[0].strip()
 
     if dur:
-        duration = (int(dur) * 60)
-        Log.Debug('* dur = %s' %dur)
-        Log.Debug('* duration = %s' %duration)
+        duration = (int(dur) * 1000)
     else:
         duration = 1000
 
